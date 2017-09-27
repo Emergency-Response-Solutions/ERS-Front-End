@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.16.2",
+    "css-loader": "^0.28.7",
     "firebase": "^4.2.0",
-    "node-sass": "^4.5.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-cookies": "^0.1.0",
@@ -15,7 +15,8 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "style-loader": "^0.18.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -29,7 +30,9 @@
     "babel-preset-react": "^6.24.1",
     "compression-webpack-plugin": "^1.0.0",
     "lodash": "^4.17.4",
+    "node-sass": "^4.5.3",
     "react-addons-test-utils": "^15.6.0",
+    "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^2.7.0",
     "webpack-dev-server": "^2.6.1",
@@ -37,8 +40,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --port 8080 --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "scss": "node-sass --watch scss -o css"
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "Kevin Coyner, Nicholas Freeman, Masato Miura, Maximilian Kwok <max.kwok@gmail.com>",
   "license": "MIT"

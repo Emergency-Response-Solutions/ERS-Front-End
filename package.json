@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "firebase": "^4.2.0",
+    "node-sass": "^4.5.3",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-cookies": "^0.1.0",
@@ -36,7 +37,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --port 8080 --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "scss": "node-sass --watch scss -o css"
   },
   "author": "Kevin Coyner, Nicholas Freeman, Masato Miura, Maximilian Kwok <max.kwok@gmail.com>",
   "license": "MIT"

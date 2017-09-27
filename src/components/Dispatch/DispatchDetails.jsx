@@ -38,13 +38,21 @@ class DispatchDetails extends React.Component{
     return (
       <div>
         <ul>
+          <li>Description</li>
           <li>{current_dispatch_description}</li>
+          <li>Address</li>
           <li>{current_dispatch_address}</li>
+          <li>Vehicles On Site</li>
           <li>{current_dispatch_apparatus_id_array}</li>
+          <li>Nearest Cross Street</li>
           <li>{current_dispatch_nearest_xstreets}</li>
+          <li>Radio Channel</li>
           <li>{current_dispatch_radio_channel}</li>
+          <li>Physical Map Reference</li>
           <li>{current_dispatch_physical_map_ref}</li>
+          <li>Dispatch Timestamp</li>
           <li>{current_dispatch_time_stamp}</li>
+          <li>Misc. Details</li>
           <li>{current_dispatch_misc}</li>
         </ul>
       </div>

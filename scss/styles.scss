@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+#app {
+  max-width: 400px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+button {
+  background-color: white;
+  border: 2px solid firebrick;
+  border-radius: 10px;
+  color: firebrick;
+    &:hover {
+      color: white;
+      background-color: firebrick;
+    }
+}
+
+ul {
+  list-style: none;
+  li:nth-child(odd) {
+    color: white;
+    background-color: firebrick;
+    border: 2px solid white;
+    padding: 5px 0 5px 10px;
+  }
+}

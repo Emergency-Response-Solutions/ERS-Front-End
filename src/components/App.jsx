@@ -15,7 +15,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <button type="button" onClick={()=>{this.props.dispatch(SetCurrentDispatch('Fire Alarm in District 3', '435 Powell Street', ['SF1', 'SF4'], 'Powell AND Market', 435.23, 'E4', Date.now(), 'Current roadblocks on Market and 3rd'))}}>Update Dispatch</button>
+        <button type="button" onClick={()=>{this.props.dispatch(SetCurrentDispatch('Fire Alarm in District 3', '435 Powell Street', ['SF1', 'SF4'], 'Powell AND Market', 435.23, 'E4', Date.now(), 'Current roadblocks on Market and 3rd'))}}>UPDATE DISPATCH</button>
         <br/>
         <DispatchDetails />
       </div>

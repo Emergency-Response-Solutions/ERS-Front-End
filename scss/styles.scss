@@ -28,4 +28,11 @@ ul {
     border-bottom: 2px solid firebrick;
     padding: 5px 0 5px 10px;
   }
+
+  li:nth-child(even) {
+    color: black;
+    background-color: white;
+    padding: 10px 0 0 10px;
+
+  }
 }

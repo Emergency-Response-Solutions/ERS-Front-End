@@ -1,73 +1,74 @@
+
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="400px" height="400px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+	 width="400px" height="400px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
 
-     <defs>
-         <style type="text/css"><![CDATA[
-             path {
-               stroke-dasharray: 1200;
-                stroke-dashoffset: 1000;
-               animation: dash 3s linear forwards, filler 2s linear;
-                 -webkit-animation-fill-mode: forwards;
+	 <defs>
+		 <style type="text/css"><![CDATA[
+			 path {
+			   stroke-dasharray: 1200;
+  		 	 stroke-dashoffset: 1000;
+  			 animation: dash 3s linear forwards, filler 2s linear;
+				 -webkit-animation-fill-mode: forwards;
 
-             }
+			 }
 
-             circle {
-                 stroke-dasharray: 2000;
-                stroke-dashoffset: 2000;
-               animation: dash 3s linear forwards, strokeGrow 2s linear;
-                 -webkit-animation-fill-mode: forwards;
-             }
+			 circle {
+				 stroke-dasharray: 2000;
+  		 	 stroke-dashoffset: 2000;
+  			 animation: dash 3s linear forwards, strokeGrow 2s linear;
+				 -webkit-animation-fill-mode: forwards;
+			 }
 
-             @keyframes dash {
-                  to {
-                    stroke-dashoffset: 0;
-                  }
-                }
+			 @keyframes dash {
+				  to {
+				    stroke-dashoffset: 0;
+				  }
+				}
 
-             @keyframes filler {
-                     0% {
-                        fill: white;
-                    }
+			 @keyframes filler {
+			 		0% {
+						fill: white;
+					}
 
-                    20% {
-                        fill: white;
-                    }
+					20% {
+						fill: white;
+					}
 
-                  100% {
-                    fill: firebrick;
-                  }
-                }
+				  100% {
+				    fill: firebrick;
+				  }
+				}
 
-             @keyframes strokeGrow {
-                     0% {
-                        stroke-width: 0;
-                    }
+			 @keyframes strokeGrow {
+			 		0% {
+						stroke-width: 0;
+					}
 
-                    20% {
-                        stroke-width: 4;
-                    }
+					20% {
+						stroke-width: 4;
+					}
 
-                  100% {
-                        stroke-width: 16;
-                  }
-                }
+				  100% {
+						stroke-width: 16;
+				  }
+				}
 
-             ]]>
-        </style>
-     </defs>
+			 ]]>
+		</style>
+	 </defs>
 
 <path fill="none" stroke="firebrick" stroke-width="4" stroke-miterlimit="10" d="M145.54,307.279H53.045v-45.307h80.288v-24.649
-    H53.045V192.72h89.677v-24.884H33.984c-3.407,8.523-6.303,17.305-8.64,26.313V305.32c2.385,9.195,5.356,18.154,8.856,26.844H145.54
-    V307.279z"/>
+	H53.045V192.72h89.677v-24.884H33.984c-3.407,8.523-6.303,17.305-8.64,26.313V305.32c2.385,9.195,5.356,18.154,8.856,26.844H145.54
+	V307.279z"/>
 <path fill="none" stroke="firebrick" stroke-width="4" stroke-miterlimit="10" d="M319.276,223.941
-    c0-35.682-24.179-56.105-66.202-56.105h-66.669v164.328h27.701v-49.533h38.969c2.582,0,5.164,0,7.515-0.234l30.049,49.768h31.456
-    l-36.855-54.932C307.07,268.779,319.276,250.234,319.276,223.941z M253.074,257.746h-38.969V192.72h38.969
-    c25.354,0,39.909,10.328,39.909,31.926C292.983,246.949,278.428,257.746,253.074,257.746z"/>
+	c0-35.682-24.179-56.105-66.202-56.105h-66.669v164.328h27.701v-49.533h38.969c2.582,0,5.164,0,7.515-0.234l30.049,49.768h31.456
+	l-36.855-54.932C307.07,268.779,319.276,250.234,319.276,223.941z M253.074,257.746h-38.969V192.72h38.969
+	c25.354,0,39.909,10.328,39.909,31.926C292.983,246.949,278.428,257.746,253.074,257.746z"/>
 <path fill="none" stroke="firebrick" stroke-width="4" stroke-miterlimit="10" d="M391.399,209.974
-    c0-11.033,10.565-17.137,26.764-17.137c12.441,0,30.284,4.459,48.124,15.259l3.478-7.381c-2.002-8.642-4.515-17.087-7.498-25.307
-    c-12.629-5.36-27.197-8.63-41.992-8.63c-35.681,0-59.861,17.606-59.861,45.777c0,58.454,88.739,38.03,88.739,74.653
-    c0,12.676-11.505,19.953-30.754,19.953c-17.606,0-38.737-8.451-55.637-23.945l-11.974,23.945
-    c16.902,15.494,41.315,26.059,67.14,26.059c19.388,0,35.797-5.205,46.854-14.551c5.545-17.156,9.045-35.227,10.217-53.932
-    C456.427,231.046,391.399,240.722,391.399,209.974z"/>
+	c0-11.033,10.565-17.137,26.764-17.137c12.441,0,30.284,4.459,48.124,15.259l3.478-7.381c-2.002-8.642-4.515-17.087-7.498-25.307
+	c-12.629-5.36-27.197-8.63-41.992-8.63c-35.681,0-59.861,17.606-59.861,45.777c0,58.454,88.739,38.03,88.739,74.653
+	c0,12.676-11.505,19.953-30.754,19.953c-17.606,0-38.737-8.451-55.637-23.945l-11.974,23.945
+	c16.902,15.494,41.315,26.059,67.14,26.059c19.388,0,35.797-5.205,46.854-14.551c5.545-17.156,9.045-35.227,10.217-53.932
+	C456.427,231.046,391.399,240.722,391.399,209.974z"/>
 <circle fill="none" stroke="firebrick" stroke-width="4" stroke-miterlimit="10" cx="246.333" cy="250" r="228.666"/>
 </svg>

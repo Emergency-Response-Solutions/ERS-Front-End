@@ -90,7 +90,9 @@ class ERS_DispatchDetails extends React.Component{
 
         {!geo_latitude_origin && !geo_latitude_destination
           ?
-          <div></div>
+          <div>
+            <Logo />
+          </div>
           :
           <MapWithAMarker
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"

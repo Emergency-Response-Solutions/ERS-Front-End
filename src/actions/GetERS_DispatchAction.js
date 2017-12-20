@@ -2,7 +2,8 @@ import axios from 'axios';
 
 export function getERS_DispatchDetails(id) {
   return function(dispatch) {
-    var location = `https://serene-basin-27195.herokuapp.com/api?code=${id}`;
+    // var location = `https://serene-basin-27195.herokuapp.com/api?code=${id}`;
+    var location = `http://gfd.dispatch.rustybear.com/api?code=${id}`;
     axios
       .get(location)
       .then(response => {

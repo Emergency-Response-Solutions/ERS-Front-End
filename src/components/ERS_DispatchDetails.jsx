@@ -3,10 +3,6 @@ import { getERS_DispatchDetails } from '../actions/GetERS_DispatchAction'
 import { getCurrenctGeoData } from '../actions/GetCurrentGeoData'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-const dotenv = require('dotenv').config();
-// const apiKey = process.env('googleMapAPI-key');
-let apiKey='AIzaSyDaIBXGdwp9ItpY-lA_rLk7cJ35jorY18k';
-
 @connect((store) => {
   return {
     current_dispatch_assignment_array: store.ERS_DispatchDetails.current_dispatch_assignment_array,
@@ -97,7 +93,7 @@ class ERS_DispatchDetails extends React.Component{
           </div>
           :
           <MapWithAMarker
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key={{apiKey}}&v=3.exp&libraries=geometry,drawing,places"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaIBXGdwp9ItpY-lA_rLk7cJ35jorY18k&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}

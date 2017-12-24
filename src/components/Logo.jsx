@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-var ERS_Logo = require('-!svg-react-loader?name=ERS_Logo!../assets/ERS-logo.svg');
+var ERS_Logo = require('-!svg-react-loader?name=ERS_Logo!../assets/ERS-Logo.svg');
 
 
 

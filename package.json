@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.16.2",
+    "dotenv": "^4.0.0",
     "firebase": "^4.2.0",
     "history": "^4.7.2",
     "node-sass": "^4.5.3",

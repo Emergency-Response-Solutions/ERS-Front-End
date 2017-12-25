@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export function getERS_DispatchDetails(id) {
   return function(dispatch) {
-    var location = `http://gfd.dispatch.rustybear.com/api?code=${id}`;
+    var location = `https://gfd.dispatch.rustybear.com/api?code=${id}`;
     axios
       .get(location)
       .then(response => {
@@ -14,7 +14,7 @@ export function getERS_DispatchDetails(id) {
         const streetNumber = dispatchObj.streetnumber;
         const streetName = dispatchObj.streetname;
         const district = dispatchObj.district;
-        const googleApiAddress = `http://maps.google.com/maps/api/geocode/json?address=${streetNumber}+${streetName}+${district}`;
+        const googleApiAddress = `https://maps.google.com/maps/api/geocode/json?address=${streetNumber}+${streetName}+${district}`;
         axios.get(googleApiAddress).then(response => {
           const destinationLat = response.data.results[0].geometry.location.lat;
           const destinationLng = response.data.results[0].geometry.location.lng;

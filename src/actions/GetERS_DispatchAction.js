@@ -19,8 +19,8 @@ export function getERS_DispatchDetails(id) {
           const destinationLat = response.data.results[0].geometry.location.lat;
           const destinationLng = response.data.results[0].geometry.location.lng;
           const result = {
-            destinationLat: destinationLat,
-            destinationLng: destinationLng
+            destinationLat: parseFloat(destinationLat),
+            destinationLng: parseFloat(destinationLng)
           };
           dispatch({ type: 'SET_DESTINATION', payload: result });
         });

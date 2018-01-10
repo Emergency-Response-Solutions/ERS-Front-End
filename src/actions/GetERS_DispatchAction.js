@@ -1,3 +1,9 @@
+/**
+ * Gets details of a dispatched call and dispatches to the redux store
+ * @function getERS_DispatchDetails
+ * @param { string } id
+ */
+
 import axios from 'axios';
 
 export function getERS_DispatchDetails(id) {
@@ -6,27 +12,30 @@ export function getERS_DispatchDetails(id) {
     axios
       .get(location)
       .then(response => {
-        dispatch({ type: 'SET_CURRENT_DISPATCH', payload: response.data });
+        dispatch({
+          type: 'SET_CURRENT_DISPATCH',
+          payload: response.data
+        });
         return response;
       })
       .then(response => {
         const dispatchObj = response.data;
-        const streetNumber = dispatchObj.streetnumber;
-        const streetName = dispatchObj.streetname;
-        const district = dispatchObj.district;
-        const googleApiAddress = `https://maps.google.com/maps/api/geocode/json?address=${streetNumber}+${streetName}+${district}`;
-        axios.get(googleApiAddress).then(response => {
-          const destinationLat = response.data.results[0].geometry.location.lat;
-          const destinationLng = response.data.results[0].geometry.location.lng;
-          const result = {
-            destinationLat: parseFloat(destinationLat),
-            destinationLng: parseFloat(destinationLng)
-          };
-          dispatch({ type: 'SET_DESTINATION', payload: result });
+        const destinationLng = dispatchObj.longitude;
+        const destinationLat = dispatchObj.latitude;
+        const result = {
+          destinationLat: parseFloat(destinationLat),
+          destinationLng: parseFloat(destinationLng)
+        };
+        dispatch({
+          type: 'SET_DESTINATION',
+          payload: result
         });
       })
       .catch(err => {
-        dispatch({ type: 'SET_CURRENT_DISPATCH_FAILED', payload: err });
+        dispatch({
+          type: 'SET_CURRENT_DISPATCH_FAILED',
+          payload: err
+        });
         console.log(err);
       });
   };

@@ -51,13 +51,13 @@ class ERS_DispatchDetails extends React.Component{
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
       <GoogleMap
         defaultZoom={10}
-        defaultCenter={{ lat: geo_latitude_origin, lng: geo_longitude_origin }}
+        defaultCenter={{ lat: parseFloat(geo_latitude_origin), lng: parseFloat(geo_longitude_origin) }}
       >
         <Marker
-          position={{ lat: geo_latitude_origin, lng: geo_longitude_origin }}
+          position={{ lat: parseFloat(geo_latitude_origin), lng: parseFloat(geo_longitude_origin) }}
         />
         <Marker
-          position={{ lat: geo_latitude_destination, lng: geo_longitude_destination }}
+          position={{ lat: parseFloat(geo_latitude_destination), lng: parseFloat(geo_longitude_destination) }}
         />
 
       </GoogleMap>
@@ -72,7 +72,7 @@ class ERS_DispatchDetails extends React.Component{
           <li>Address</li>
           <li>{current_dispatch_address}</li>
           <li>Apparatus Assigned</li>
-          <li>{current_dispatch_assignment_array.join(' ')}</li>
+          <li>{current_dispatch_assignment_array}</li>
           <li>Nearest Cross Streets</li>
           <li>{current_dispatch_crossstreets}</li>
           <li>Radio Channel</li>

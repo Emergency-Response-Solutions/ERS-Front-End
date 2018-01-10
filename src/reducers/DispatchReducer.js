@@ -7,7 +7,6 @@ export default function reducer(
     current_dispatch_physical_map_ref: null,
     current_dispatch_radiofreq: null,
     current_dispatch_address: null,
-    // current_dispatch_assignment_array: [],
     current_dispatch_assignment_array: null,
     current_dispatch_time_stamp: null,
     current_dispatch_misc: null,

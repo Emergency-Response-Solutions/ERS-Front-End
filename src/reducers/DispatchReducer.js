@@ -7,7 +7,8 @@ export default function reducer(
     current_dispatch_physical_map_ref: null,
     current_dispatch_radiofreq: null,
     current_dispatch_address: null,
-    current_dispatch_assignment_array: [],
+    // current_dispatch_assignment_array: [],
+    current_dispatch_assignment_array: null,
     current_dispatch_time_stamp: null,
     current_dispatch_misc: null,
     geo_latitude_origin: null,
@@ -22,17 +23,16 @@ export default function reducer(
     case 'SET_CURRENT_DISPATCH': {
       return {
         ...state,
-        current_dispatch_assignment_array: action.payload.assignment,
-        current_dispatch_crossstreets: action.payload.crossstreets,
-        current_dispatch_description: action.payload.description,
-        current_dispatch_district: action.payload.district,
-        current_dispatch_id: action.payload.id,
-        current_dispatch_physical_map_ref: action.payload.map,
-        current_dispatch_radiofreq: action.payload.radiofreq,
-        current_dispatch_address:
-          action.payload.streetnumber + ' ' + action.payload.streetname,
-        current_dispatch_time_stamp: action.payload.timeout,
-        current_dispatch_misc: action.payload.misc
+        current_dispatch_assignment_array: action.payload.UnitList,
+        current_dispatch_crossstreets: action.payload.x_street_name,
+        current_dispatch_description: action.payload.call_description,
+        current_dispatch_district: action.payload.city,
+        current_dispatch_id: action.payload.cfs_no,
+        current_dispatch_physical_map_ref: action.payload.x_street_name,
+        current_dispatch_radiofreq: action.payload.UnitList,
+        current_dispatch_address: action.payload.location,
+        current_dispatch_time_stamp: action.payload.rec_dt,
+        current_dispatch_misc: action.payload.cfs_remark
       };
     }
     case 'SET_ORIGIN': {

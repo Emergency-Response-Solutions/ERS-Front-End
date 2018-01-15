@@ -5,7 +5,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 
 @connect((store) => {
   return {
-    current_dispatch_assignment_array: store.ERS_DispatchDetails.current_dispatch_assignment_array,
+    current_dispatch_assignment: store.ERS_DispatchDetails.current_dispatch_assignment,
     current_dispatch_crossstreets: store.ERS_DispatchDetails.current_dispatch_crossstreets,
     current_dispatch_description: store.ERS_DispatchDetails.current_dispatch_description,
     current_dispatch_district: store.ERS_DispatchDetails.current_dispatch_district,
@@ -46,7 +46,7 @@ class ERS_DispatchDetails extends React.Component{
   }
 
   render(){
-    const { current_dispatch_description, current_dispatch_address, current_dispatch_assignment_array, current_dispatch_crossstreets, current_dispatch_radiofreq, current_dispatch_physical_map_ref, current_dispatch_time_stamp, current_dispatch_misc, current_dispatch_district, current_dispatch_id, geo_latitude_destination, geo_longitude_destination, geo_latitude_origin, geo_longitude_origin} = this.props;
+    const { current_dispatch_description, current_dispatch_address, current_dispatch_assignment, current_dispatch_crossstreets, current_dispatch_radiofreq, current_dispatch_physical_map_ref, current_dispatch_time_stamp, current_dispatch_misc, current_dispatch_district, current_dispatch_id, geo_latitude_destination, geo_longitude_destination, geo_latitude_origin, geo_longitude_origin} = this.props;
 
     const MapWithAMarker = withScriptjs(withGoogleMap(props =>
       <GoogleMap
@@ -72,13 +72,11 @@ class ERS_DispatchDetails extends React.Component{
           <li>Address</li>
           <li>{current_dispatch_address}</li>
           <li>Apparatus Assigned</li>
-          <li>{current_dispatch_assignment_array}</li>
+          <li>{ current_dispatch_assignment }</li>
           <li>Nearest Cross Streets</li>
-          <li>{current_dispatch_crossstreets}</li>
-          <li>Radio Channel</li>
-          <li>{current_dispatch_radiofreq}</li>
-          <li>Physical Map Reference</li>
-          <li>{current_dispatch_physical_map_ref}</li>
+          <li>{ current_dispatch_crossstreets }</li>
+          <li>Radio Channel & Map Reference</li>
+          <li>{ current_dispatch_radiofreq } &nbsp; { current_dispatch_physical_map_ref }</li>
           <li>Dispatch Timeout</li>
           <li>{current_dispatch_time_stamp}</li>
           <li>Misc. Details</li>

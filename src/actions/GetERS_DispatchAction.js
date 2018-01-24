@@ -20,8 +20,19 @@ export function getERS_DispatchDetails(id) {
       })
       .then(response => {
         const dispatchObj = response.data;
-        const destinationLng = dispatchObj.longitude;
-        const destinationLat = dispatchObj.latitude;
+        // If there is a lat and long from Dispatch then:
+        if (dispatchObj.longitude !== '') {
+          const destinationLng = dispatchObj.longitude;
+          const destinationLat = dispatchObj.latitude;
+        } else {
+          const streetNumber = dispatchObj.streetnumber;
+          const streetName = dispatchObj.streetname;
+					const city = dispatchObj.city;  // TODO: check for OLD G'WCH and other odd variants
+          const googleApiAddress = `https://maps.google.com/maps/api/geocode/json?address=${streetNumber}+${streetName}+${city}`;
+          axios.get(googleApiAddress).then(response => {
+            const destinationLat = response.data.results[0].geometry.location.lat;
+            const destinationLng = response.data.results[0].geometry.location.lng;
+        } // end else
         const result = {
           destinationLat: parseFloat(destinationLat),
           destinationLng: parseFloat(destinationLng)

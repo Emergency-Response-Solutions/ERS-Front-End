@@ -20,12 +20,11 @@ export function getERS_DispatchDetails (id) {
       })
       .then(response => {
         const dispatchObj = response.data
-        // If there is a lat and long from Dispatch then:
-        console.log('THE LAT IS: ', dispatchObj.longitude);
-        if (dispatchObj.longitude !== '') {
-          const destinationLng = dispatchObj.longitude
-          const destinationLat = dispatchObj.latitude
-        } else {
+        // If there is a lat and long from Dispatch then use them:
+        if (dispatchObj.latitude !== '') {
+          var destinationLng = dispatchObj.longitude
+          var destinationLat = dispatchObj.latitude
+        } else { // otherwise have Google get the lat/long from the address
           const streetNumber = dispatchObj.streetnumber
           const streetName = dispatchObj.streetname
 	  const city = dispatchObj.city  // TODO: check for OLD G'WCH and other odd variants

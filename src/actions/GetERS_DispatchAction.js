@@ -26,20 +26,19 @@ export function getERS_DispatchDetails (id) {
           destinationLng = dispatchObj.longitude
           destinationLat = dispatchObj.latitude
         } else { // otherwise have Google get the lat/long from the address
-          var locate = dispatchObj.location
-	  const city = dispatchObj.city
+          const locate = dispatchObj.location
+          const city = dispatchObj.city
           const googleApiAddress = `https://maps.google.com/maps/api/geocode/json?address=${locate}+${city}+CT&key=AIzaSyDaIBXGdwp9ItpY-lA_rLk7cJ35jorY18k`
-            console.log(googleApiAddress);
           await axios.get(googleApiAddress) // this geocode call is what we're waiting for ...
             .then(response => {
               if (response.data.status !== 'ZERO_RESULTS') {
                 destinationLat = response.data.results[0].geometry.location.lat
                 destinationLng = response.data.results[0].geometry.location.lng
               } else {
-                console.log('ERROR: Zero results from Google Geocode');
+                console.log('WARNING: Zero results from Google Geocode')
               }
             })
-            .catch (err => {
+            .catch(err => {
               console.log(err)
             })
         } // end else

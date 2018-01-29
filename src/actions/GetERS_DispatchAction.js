@@ -8,7 +8,7 @@ import axios from 'axios'
 
 export function getERS_DispatchDetails (id) {
   return function (dispatch) {
-    var location = `https://gfd.dispatch.rustybear.com/api?code=${id}`
+    var location = `https://gfd.dispatch.rustybear.com/api?slug=${id}`
     axios.get(location)
       .then(response => {
         dispatch({

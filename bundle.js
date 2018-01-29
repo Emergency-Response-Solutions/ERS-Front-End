@@ -18038,7 +18038,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function getERS_DispatchDetails(id) {
   return function (dispatch) {
-    var location = 'https://gfd.dispatch.rustybear.com/api?code=' + id;
+    var location = 'https://gfd.dispatch.rustybear.com/api?slug=' + id;
     _axios2.default.get(location).then(function (response) {
       dispatch({
         type: 'SET_CURRENT_DISPATCH',
@@ -18130,17 +18130,16 @@ function reducer() {
   switch (action.type) {
     case 'SET_CURRENT_DISPATCH':
       {
-        var xStreet = action.payload.x_street_name.split(' ').splice(3);
         return _extends({}, state, {
-          current_dispatch_assignment: action.payload.UnitList.split(',').splice(1),
-          current_dispatch_crossstreets: xStreet,
+          current_dispatch_assignment: action.payload.assignment,
+          current_dispatch_crossstreets: action.payload.cross_street,
           current_dispatch_description: action.payload.call_description,
           current_dispatch_district: action.payload.city,
           current_dispatch_id: action.payload.cfs_no,
-          current_dispatch_physical_map_ref: action.payload.x_street_name.split(' ').splice(0, 3),
-          current_dispatch_radiofreq: action.payload.UnitList.split(',')[0],
+          current_dispatch_physical_map_ref: action.payload.map_ref,
+          current_dispatch_radiofreq: action.payload.radio_freq,
           current_dispatch_address: action.payload.location,
-          current_dispatch_time_stamp: action.payload.rec_dt,
+          current_dispatch_time_stamp: action.payload.timeout,
           current_dispatch_misc: action.payload.cfs_remark
         });
       }

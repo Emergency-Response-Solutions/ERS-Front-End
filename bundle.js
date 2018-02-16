@@ -18042,7 +18042,7 @@ function getERS_DispatchDetails(id) {
     _axios2.default.get(location).then(function (response) {
       dispatch({
         type: 'SET_CURRENT_DISPATCH',
-        payload: response.data
+        payload: response.data.Items[0]
       });
       return response;
     }).then(async function (response) {

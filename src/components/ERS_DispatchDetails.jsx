@@ -30,14 +30,14 @@ class ERS_DispatchDetails extends React.Component{
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
     var urlParams = this.props.location.search;
     var id = urlParams.replace('?id=', '');
 
-    this.props.dispatch(getERS_DispatchDetails(id))
+    await this.props.dispatch(getERS_DispatchDetails(id))
 
-    navigator.geolocation.getCurrentPosition(position => {
+    await navigator.geolocation.getCurrentPosition(position => {
       this.props.dispatch(getCurrenctGeoData(position.coords.latitude, position.coords.longitude))
     }, () => {
       console.log('denied');

@@ -18,26 +18,20 @@ export function getERS_DispatchDetails(id) {
           // payload: response.data.Items[0]
           payload: dispatchObj
         })
-        return { dispatchObj:dispatchObj }
+        return { dispatchObj: dispatchObj }
       })
-      // .then(async response => { // might have to wait for Google geocode
       .then(async response => { // might have to wait for Google geocode
-        // let dispatchObj = Object.assign({}, response.dispatchObj)
-        // console.log('new dispatchObj: ', dispatchObj)
-        // const dispatchObj = response.data
-        // If there is a lat and long from Dispatch then use them:
         var destinationLng = 0
         var destinationLat = 0
+        // If there is a lat and long from Dispatch then use them ...
         if (response.dispatchObj.latitude !== '') {
           // set destination using long/lat
           destinationLng = response.dispatchObj.longitude
           destinationLat = response.dispatchObj.latitude
-          console.log('destinationLat: ', destinationLat);
         } else {
-          // otherwise have Google get the lat/long from the address
+          // ... otherwise have Google get the lat/long from the address
           const locate = response.dispatchObj.location
           const city = response.dispatchObj.city
-          console.log('city: ', city);
           const googleApiAddress = `https://maps.google.com/maps/api/geocode/json?address=${locate}+${city}+CT&key=AIzaSyDaIBXGdwp9ItpY-lA_rLk7cJ35jorY18k`
           await axios.get(googleApiAddress) // this geocode call is what we're waiting for ...
             .then(response => {

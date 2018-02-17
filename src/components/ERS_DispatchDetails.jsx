@@ -30,14 +30,14 @@ class ERS_DispatchDetails extends React.Component{
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
 
     var urlParams = this.props.location.search;
     var id = urlParams.replace('?id=', '');
 
-    this.props.dispatch(getERS_DispatchDetails(id))
+    await this.props.dispatch(getERS_DispatchDetails(id))
 
-    navigator.geolocation.getCurrentPosition(position => {
+    await navigator.geolocation.getCurrentPosition(position => {
       this.props.dispatch(getCurrenctGeoData(position.coords.latitude, position.coords.longitude))
     }, () => {
       console.log('denied');
@@ -91,7 +91,7 @@ class ERS_DispatchDetails extends React.Component{
           </div>
           :
           <MapWithAMarker
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaIBXGdwp9ItpY-lA_rLk7cJ35jorY18k&v=3.exp&libraries=geometry,drawing,places"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaIBXGdwp9ItpY-lA_rLk7cJ35jorY18k&v=3&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div style={{ height: `100%` }} />}

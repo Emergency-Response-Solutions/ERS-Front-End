@@ -11,14 +11,20 @@ export function getERS_DispatchDetails (id) {
     var location = `https://gfd.dispatch.rustybear.com/api?slug=${id}`
     axios.get(location)
       .then(response => {
+        const dispatchObj = response.data.Items[0]
         dispatch({
           type: 'SET_CURRENT_DISPATCH',
-          payload: response.data.Items[0]
+          // payload: response.data.Items[0]
+          payload: dispatchObj
         })
-        return response
+        // return response
+        // return { dispatchObj }
+        return dispatchObj
       })
       .then(async response => { // might have to wait for Google geocode
-        const dispatchObj = response.data
+        // const dispatchObj = response.data.Items[0]
+        console.log('response.data.Items: ', dispatchObj)
+        // const dispatchObj = response.data
         // If there is a lat and long from Dispatch then use them:
         var destinationLng = 0
         var destinationLat = 0
